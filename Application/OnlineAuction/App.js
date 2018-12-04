@@ -6,54 +6,26 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import {AppRegistiry, Image} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { AppRegistiry, Image } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
-  
-export default class App extends Component<Props> {
-  render() {
-	  let pic = {
-      uri: 'http://borculochrschool.org/wp-content/uploads/2016/09/Auction-500x291.jpg'
-    };
-    return (
-      <View style={styles.container}>
-		<Image source={pic} style={{width: 193, height: 110}}/>
-        <Text style={styles.welcome}>Welcome to Online Auction</Text>
-        <Text style={styles.instructions}>This is an early stage our the application</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-	 
-    );
+import HomeScreen from './View/HomeScreen'
+import LoginScreen from './View/LoginScreen'
+import RegisterScreen from './View/RegisterScreen'
+
+
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Login: LoginScreen,
+    Register : RegisterScreen
+  },
+  {
+    initialRouteName: "Login"
   }
-}
+);
+export default createAppContainer(RootStack);
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
