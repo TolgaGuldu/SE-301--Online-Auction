@@ -18,6 +18,9 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+
+
+  
 export default class App extends Component<Props> {
   render() {
 	  let pic = {
@@ -30,9 +33,11 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>This is an early stage our the application</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
+	 
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
