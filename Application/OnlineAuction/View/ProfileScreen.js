@@ -3,22 +3,19 @@ import { Platform, StyleSheet, Text, View, Button, TextInput ,StatusBar} from 'r
 import { AppRegistiry, Image } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+
+import Form from './components/RegisterForm'
+
+
 export default class ProfileScreen extends Component {
 
-    static navigationOptions =
-        {
-            title: '                        Profile       ',
-      
-        };
-
-  
     render() {
 
         return (
 
             <View style={styles.MainContainer}>
 
-                <Text style={styles.text}>This is going to be profile page </Text>
+                <Form/>
                
             </View>
         );
@@ -32,8 +29,9 @@ const styles = StyleSheet.create({
 
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#f5fcff',
-        padding: 11
+        backgroundColor: '#7986cb',
+        padding: 11,
+        alignItems : 'center'
 
     },
 

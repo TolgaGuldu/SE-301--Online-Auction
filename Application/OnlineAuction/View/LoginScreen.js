@@ -3,13 +3,12 @@ import { Platform, StyleSheet, Text, View, Button, TextInput ,StatusBar} from 'r
 import { AppRegistiry, Image } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+
+
+
 export default class LoginScreen extends Component {
 
-    static navigationOptions =
-        {
-            title: '                         Online Auction      ',
-      
-        };
+ 
     gotoNextActivity = () => {
         this.props.navigation.navigate('Home');
     }
@@ -25,7 +24,11 @@ export default class LoginScreen extends Component {
         return (
 
             <View style={styles.MainContainer}>
-
+                <StatusBar
+                    backgroundColor = '#49599a'
+                    barStyle = 'light-content'
+                />
+               
                 <Text style={styles.text}>Username: </Text>
                 <TextInput
                     style={{ height: 40 }}
@@ -53,8 +56,9 @@ const styles = StyleSheet.create({
 
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#f5fcff',
-        padding: 11
+        backgroundColor: '#7986cb',
+        padding: 11,
+        alignItems : 'center'
 
     },
 
