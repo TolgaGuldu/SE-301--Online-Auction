@@ -10,15 +10,14 @@ export default class LoginScreen extends Component {
             title: '                         Online Auction      ',
       
         };
-
     gotoNextActivity = () => {
         this.props.navigation.navigate('Home');
     }
     gotoNextActivity2 = () => {
         this.props.navigation.navigate('Register');
     }
-    doNothing = () => {
-        
+    message = () => {
+        alert('Not usable at the moment')
     }
 
     render() {
@@ -39,7 +38,7 @@ export default class LoginScreen extends Component {
                 />
                 <Button onPress={this.gotoNextActivity} title='Login' />
                 <Button onPress={this.gotoNextActivity2} title='Register' />
-                <Button onPress={this.doNothing} title='Forgot Password' />
+                <Button onPress={this.message} title='Forgot Password' />
 
 
             </View>
