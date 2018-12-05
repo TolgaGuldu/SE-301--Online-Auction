@@ -1,0 +1,7 @@
+1. REACT NATVIHATION KURULUMU (source : https://reactnavigation.org/docs/en/getting-started.html )
+Sirasiyla su kodlari calistirin;
+- npm install --save react-navigation
+- npm install --save react-native-gesture-handler
+- react-native link
+
+2.
