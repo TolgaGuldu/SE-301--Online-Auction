@@ -7,7 +7,9 @@ export default class HomeScreen extends Component {
 
   
 
-
+  gotoNextActivity = () => {
+    this.props.navigation.navigate('Profile');
+}
 
   render() {
     let pic = {
@@ -20,6 +22,7 @@ export default class HomeScreen extends Component {
         <Image source={pic} style={{ width: 193, height: 110 }} />
         <Text style={styles.welcome}>Welcome to Online Auction</Text>
         <Text style={styles.instructions}>This is an early stage our the application</Text>
+        <Button onPress={this.gotoNextActivity} title='Profile Page' />
 
       </View>
     );
