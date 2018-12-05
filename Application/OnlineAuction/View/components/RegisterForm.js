@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar ,TouchableOpacity} from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar, TouchableOpacity ,withNavigation} from 'react-native';
 
 
 
-export default class Form extends Component {
+
+class RegisterForm extends Component {
+
+
+    gotoNextActivity = () => {
+        this.props.navigation.navigate('Login');
+        return true;
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -20,24 +27,25 @@ export default class Form extends Component {
                 <TextInput
                     style={styles.inputBox}
                     placeholder='Password'
-                    secureTextEntry = {true}
+                    secureTextEntry={true}
                     placeholderTextColor="#ffffff"
                 />
                 <TextInput
                     style={styles.inputBox}
                     placeholder='Password Check'
-                    secureTextEntry = {true}
+                    secureTextEntry={true}
                     placeholderTextColor="#ffffff"
                 />
 
-                <TouchableOpacity style = {styles.button}>
-                    <Text style = {styles.buttonText}>Register</Text>
+                <TouchableOpacity onPress={this.gotoNextActivity} style={styles.button}>
+                    <Text style={styles.buttonText}>Register</Text>
                 </TouchableOpacity>
             </View>
         )
     }
 }
 
+export default RegisterForm;
 const styles = StyleSheet.create({
 
     MainContainer: {
@@ -55,10 +63,10 @@ const styles = StyleSheet.create({
         color: "#ffffff",
         textAlign: 'center',
     },
-    button : {
+    button: {
         backgroundColor: '#ffab00',
         width: 300,
-        borderRadius:25,
+        borderRadius: 25,
         marginVertical: 10,
         paddingVertical: 13,
     },
@@ -76,7 +84,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
-        marginVertical : 10
+        marginVertical: 10
     }
 
 });

@@ -18,6 +18,7 @@ import RegisterScreen from './View/RegisterScreen'
 import ProfileScreen from './View/ProfileScreen'
 
 
+
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -30,5 +31,6 @@ const RootStack = createStackNavigator(
   }
 );
 export default createAppContainer(RootStack);
+
 
 
