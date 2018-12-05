@@ -17,6 +17,9 @@ export default class LoginScreen extends Component {
     gotoNextActivity2 = () => {
         this.props.navigation.navigate('Register');
     }
+    doNothing = () => {
+        
+    }
 
     render() {
 
@@ -36,6 +39,7 @@ export default class LoginScreen extends Component {
                 />
                 <Button onPress={this.gotoNextActivity} title='Login' />
                 <Button onPress={this.gotoNextActivity2} title='Register' />
+                <Button onPress={this.doNothing} title='Forgot Password' />
 
 
             </View>

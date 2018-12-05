@@ -19,12 +19,17 @@ export default class RegisterScreen extends Component {
                 <Text style={styles.text}>Username: </Text>
                 <TextInput
                     style={{ height: 40 }}
-                    placeholder="Username"
+                    placeholder="Min 6 characters"
+                />
+                <Text style={styles.text}>E-mail: </Text>
+                <TextInput
+                    style={{ height: 40 }}
+                    placeholder="example@example.com"
                 />
                 <Text style={styles.text}>Password: </Text>
                 <TextInput
                     style={{ height: 40 }}
-                    placeholder="Password"
+                    placeholder="Min 6 characters"
                 />
                  <Text style={styles.text}>Password check: </Text>
                 <TextInput
