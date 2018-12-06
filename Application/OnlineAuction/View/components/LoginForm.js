@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar, TouchableOpacity } from 'react-native';
 import { AppRegistiry, Image } from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
+import Logo from './Logo';
 
 
 export default class Form extends Component {
@@ -17,6 +18,7 @@ export default class Form extends Component {
     render() {
         return (
             <View style={styles.MainContainer}>
+                <Logo />
                 <TextInput
                     style={styles.inputBox}
                     placeholder='Username'
@@ -25,10 +27,10 @@ export default class Form extends Component {
                 <TextInput
                     style={styles.inputBox}
                     placeholder='Password'
-                    secureTextEntry = {true}
+                    secureTextEntry={true}
                     placeholderTextColor="#ffffff"
                 />
-               
+
                 <TouchableOpacity onPress={this.gotoNextActivity} style={styles.button}>
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
