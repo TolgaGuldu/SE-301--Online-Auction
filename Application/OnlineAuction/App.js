@@ -9,28 +9,27 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, } from 'react-native';
 import { AppRegistiry, Image } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
-import HomeScreen from './View/HomeScreen'
-import LoginScreen from './View/LoginScreen'
-import RegisterScreen from './View/RegisterScreen'
-import ProfileScreen from './View/ProfileScreen'
+import Routes from './View/Routes';
 
-
-
-const RootStack = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Login: LoginScreen,
-    Register : RegisterScreen,
-    Profile : ProfileScreen
-  },
-  {
-    initialRouteName: "Login"
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Routes />
+      </View>
+    )
   }
-);
-export default createAppContainer(RootStack);
+}
 
 
 
+const styles = StyleSheet.create(
+  {
+    container: {
+      flex: 1,
+     
+    },
+  }
+)

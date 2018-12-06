@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar, TouchableOpacity } from 'react-native';
 import { AppRegistiry, Image } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import {Actions} from 'react-native-router-flux';
 
 
 export default class Form extends Component {
 
 
     gotoNextActivity = () => {
-        this.props.navigation.navigate('Home');
+        Actions.Home();
     }
+    gotoNextActivity2 = () => {
+        Actions.Register();
+    }
+
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.MainContainer}>
                 <TextInput
                     style={styles.inputBox}
                     placeholder='Username'
@@ -27,6 +31,9 @@ export default class Form extends Component {
                
                 <TouchableOpacity onPress={this.gotoNextActivity} style={styles.button}>
                     <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.gotoNextActivity2} style={styles.button}>
+                    <Text style={styles.buttonText}>Register</Text>
                 </TouchableOpacity>
             </View>
         )

@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button, TextInput,StatusBar } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar, TouchableOpacity } from 'react-native';
 import { AppRegistiry, Image } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { Actions } from 'react-native-router-flux';
 
 export default class HomeScreen extends Component {
 
-  
+
 
   gotoNextActivity = () => {
-    this.props.navigation.navigate('Profile');
-}
+    Actions.Profile();
+  }
 
   render() {
-    let pic = {
-      uri: 'http://borculochrschool.org/wp-content/uploads/2016/09/Auction-500x291.jpg'
-    };
-    const { navigate } = this.props.navigation;
+    
     return (
 
-      <View style={styles.container}>
-        <Image source={pic} style={{ width: 193, height: 110 }} />
-        <Text style={styles.welcome}>Welcome to Online Auction</Text>
-        <Text style={styles.instructions}>This is an early stage our the application</Text>
-        <Button onPress={this.gotoNextActivity} title='Profile Page' />
+      <View style={styles.MainContainer}>
+        
+        
+        <TouchableOpacity onPress={this.gotoNextActivity} style={styles.button}>
+          <Text style={styles.buttonText}>Profile</Text>
+        </TouchableOpacity>
 
       </View>
     );
@@ -32,29 +30,43 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
 
 
-  container: {
+  MainContainer: {
+
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
+    backgroundColor: '#7986cb',
+    padding: 11,
+    alignItems: 'center'
 
-  text:
-  {
-    fontSize: 12,
+},
+buttonText: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#ffffff",
+    textAlign: 'center',
+},
+button: {
+    backgroundColor: '#ffab00',
+    width: 300,
+    borderRadius: 25,
+    marginVertical: 10,
+    paddingVertical: 13,
+},
+text:
+{
+    fontSize: 22,
     color: '#000',
     textAlign: 'center',
     marginBottom: 10
-  },
-  welcome: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+},
+
+inputBox: {
+    width: 300,
+    backgroundColor: '#aab6fe',
+    borderRadius: 25,
+    paddingHorizontal: 16,
+    fontSize: 16,
+    marginVertical: 10
+}
 
 });

@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar, TouchableOpacity ,withNavigation} from 'react-native';
 
+import {Actions} from 'react-native-router-flux';
 
 
-
-class RegisterForm extends Component {
+export default class RegisterForm extends Component {
 
 
     gotoNextActivity = () => {
-        this.props.navigation.navigate('Login');
-        return true;
+        Actions.Login();
     }
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.MainContainer}>
                 <TextInput
                     style={styles.inputBox}
                     placeholder='Username'
@@ -45,7 +44,7 @@ class RegisterForm extends Component {
     }
 }
 
-export default RegisterForm;
+
 const styles = StyleSheet.create({
 
     MainContainer: {
@@ -53,10 +52,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#7986cb',
-        padding: 11,
+        padding: 20,
         alignItems: 'center'
 
     },
+    
     buttonText: {
         fontSize: 16,
         fontWeight: "500",

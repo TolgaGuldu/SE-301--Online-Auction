@@ -4,4 +4,9 @@ Sirasiyla su kodlari calistirin;
 - npm install --save react-native-gesture-handler
 - react-native link
 
-2.
+2.REACT NATIVE ROUTER PLUS
+-npm i --save react-native-router-flux
+-npm install babel-loader file-loader --dev
+
+
+BÜTÜN BU YÜKLEMELERI YAPARKEN KODLAMAYLA ILGILI BIRSEY AÇIK OLMASIN YOKSA HATA VERIYOR

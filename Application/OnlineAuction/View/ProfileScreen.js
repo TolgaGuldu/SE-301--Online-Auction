@@ -15,7 +15,9 @@ export default class ProfileScreen extends Component {
 
             <View style={styles.MainContainer}>
 
-                <Form/>
+                <Text style = {styles.text}>
+                    This is going to be profile page
+                </Text>
                
             </View>
         );
@@ -34,13 +36,10 @@ const styles = StyleSheet.create({
         alignItems : 'center'
 
     },
-
-    text:
-    {
-        fontSize: 22,
-        color: '#000',
-        textAlign: 'center',
-        marginBottom: 10
-    },
+    text:{
+        fontSize : 27,
+        alignItems : 'center'
+    }
+   
 
 });

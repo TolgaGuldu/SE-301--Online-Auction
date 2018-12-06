@@ -1,46 +1,24 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button, TextInput ,StatusBar} from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar } from 'react-native';
 import { AppRegistiry, Image } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { Actions } from 'react-native-router-flux';
+
+
+import Form from './components/RegisterForm';
 
 export default class RegisterScreen extends Component {
 
+
     
-    gotoNextActivity = () => {
-        this.props.navigation.navigate('Login');
-    }
-  
+
     render() {
 
         return (
 
             <View style={styles.MainContainer}>
 
-                <Text style={styles.text}>Username: </Text>
-                <TextInput
-                    style={{ height: 40 }}
-                    placeholder="Min 6 characters"
-                />
-                <Text style={styles.text}>E-mail: </Text>
-                <TextInput
-                    style={{ height: 40 }}
-                    placeholder="example@example.com"
-                />
-                <Text style={styles.text}>Password: </Text>
-                <TextInput
-                    style={{ height: 40 }}
-                    placeholder="Min 6 characters"
-                />
-                 <Text style={styles.text}>Password check: </Text>
-                <TextInput
-                    style={{ height: 40 }}
-                    placeholder="enter same password"
-                />
-                <Text style={styles.text}> </Text>
-                <Button onPress={this.gotoNextActivity} title='Finish' />
+                <Form/>
                
-
-
             </View>
         );
     }
@@ -53,8 +31,9 @@ const styles = StyleSheet.create({
 
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#f5fcff',
-        padding: 15,
+        backgroundColor: '#7986cb',
+        padding: 11,
+        alignItems : 'center'
 
     },
 
