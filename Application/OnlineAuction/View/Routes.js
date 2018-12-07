@@ -17,7 +17,7 @@ export default class Routes extends Component{
                     <Scene key = 'Login' component = {LoginScreen} initial={true} title="Login"/>
                     <Scene key = 'Register' component = {RegisterScreen} title="Register" initial={false}/>
                     <Scene key = 'Home' component = {HomeScreen} title="Home" initial={false}/>
-                    <Scene key = 'Profile' component = {ProfileScreen} title="Profile" initial={false}/>
+                    <Scene key = 'Profile' component = {ProfileScreen}  initial={false} hideNavBar = {false} navTransparent = {true}/>
                 </Stack>
             </Router>
         )
