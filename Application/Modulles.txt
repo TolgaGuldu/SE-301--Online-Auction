@@ -9,4 +9,8 @@ Sirasiyla su kodlari calistirin;
 -npm install babel-loader file-loader --dev
 
 
+3. TABBAR
+- npm install react-native-tabbar
+
+
 BÜTÜN BU YÜKLEMELERI YAPARKEN KODLAMAYLA ILGILI BIRSEY AÇIK OLMASIN YOKSA HATA VERIYOR

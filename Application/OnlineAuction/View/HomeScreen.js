@@ -3,9 +3,8 @@ import { Platform, StyleSheet, Text, View, Button, TextInput, StatusBar, Touchab
 import { AppRegistiry, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
+
 export default class HomeScreen extends Component {
-
-
 
   gotoNextActivity = () => {
     Actions.Profile();
