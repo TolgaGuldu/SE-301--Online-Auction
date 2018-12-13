@@ -6,7 +6,11 @@ const DataTypes = Sequelize.DataTypes;
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const auctions = sequelizeClient.define('auctions', {
-    text: {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    current_price: {
       type: DataTypes.STRING,
       allowNull: false
     }
