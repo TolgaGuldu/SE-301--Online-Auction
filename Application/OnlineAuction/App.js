@@ -13,12 +13,14 @@ import { AppRegistiry, Image } from 'react-native';
 
 import Routes from './View/Routes';
 
+
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Routes />
       </View>
+	  
     )
   }
 }
