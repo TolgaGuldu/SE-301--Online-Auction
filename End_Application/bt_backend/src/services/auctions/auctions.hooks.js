@@ -1,11 +1,19 @@
+'use strict';
+
 const { authenticate } = require('feathers-authentication').hooks;
+const auth = require('feathers-authentication-hooks');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [authenticate('jwt')],
     find: [],
     get: [],
-    create: [],
+    create: [
+      auth.associateCurrentUser({
+        idField: 'id',
+        as: 'seller_id',
+      }),
+    ],
     update: [],
     patch: [],
     remove: []

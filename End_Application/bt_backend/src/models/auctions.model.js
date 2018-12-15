@@ -7,21 +7,34 @@ module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const auctions = sequelizeClient.define('auctions', {
     name: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       allowNull: false
     },
     current_price: {
-      type: DataTypes.STRING,
+      type: Sequelize.DECIMAL(2),
       allowNull: false
-    }
+    },
+    expiration_date: {
+      type: Sequelize.DATE,
+      allowNull: false
+    },
+
   }, {
-    hooks: {
+   hooks: {
       beforeCount(options) {
         options.raw = true;
       }
     }
   });
-
+ /* {
+    classMethods: {
+      associate (models) { // eslint-disable-line no-unused-vars
+        // Define associations here
+        // See http://docs.sequelizejs.com/en/latest/docs/associations/
+      }
+    }
+  });*/
+  
   auctions.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
