@@ -1,4 +1,4 @@
-# bt-backend
+# bt_back
 
 > 
 
@@ -14,7 +14,7 @@ Getting up and running is as easy as 1, 2, 3.
 2. Install your dependencies
 
     ```
-    cd path/to/bt-backend; npm install
+    cd path/to/bt_back; npm install
     ```
 
 3. Start your app
