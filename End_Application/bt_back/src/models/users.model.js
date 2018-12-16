@@ -13,7 +13,7 @@ module.exports = function (app) {
     }, 
     email: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
       unique: true
     },
     password: {
@@ -32,21 +32,10 @@ module.exports = function (app) {
 
   // eslint-disable-next-line no-unused-vars
   users.associate = function (models) {
-
     users.hasMany(models.auctions, { foreignKey: 'seller_id' })
-    users.hasMany(models.auctions, { foreignKey: 'top_bidder_id' })
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
-
- /* {
-    classMethods: {
-      associate (models) { // eslint-disable-line no-unused-vars
-        users.hasMany(models.auctions, { foreignKey: 'seller_id' })
-        users.hasMany(models.auctions, { foreignKey: 'top_bidder_id' })
-      }
-    }*/
-  //});
 
   return users;
 };
